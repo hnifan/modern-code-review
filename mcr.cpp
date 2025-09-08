@@ -1,3 +1,14 @@
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+/*
+ * Check whether there is a winner on the board.
+ * Returns true if any row, column or diagonal is filled
+ * with the same non-space character ('X' or 'O').
+ */
+
 bool isWin(char game[3][3]){
 	bool win = false;
 	if (game[0][0] == game[0][1] && game[0][1] == game[0][2] && (game[0][0] == 'X' || game[0][0] == 'O')) win = true;
@@ -11,6 +22,23 @@ bool isWin(char game[3][3]){
 	if (game[0][0] == game[1][1] && game[1][1] == game[2][2] && (game[0][0] == 'X' || game[0][0] == 'O')) win = true;
 	if (game[0][2] == game[1][1] && game[1][1] == game[2][0] && (game[0][2] == 'X' || game[0][2] == 'O')) win = true;
 	return win;
+}
+
+/*
+ * Print the board to console in a human-friendly format.
+ */
+void printBoard(const char board[3][3]) {
+    cout << endl;
+    for (int r = 0; r < 3; ++r) {
+        cout << " ";
+        for (int c = 0; c < 3; ++c) {
+            cout << board[r][c];
+            if (c < 2) cout << " | ";
+        }
+        cout << endl;
+        if (r < 2) cout << "---+---+---" << endl;
+    }
+    cout << endl;
 }
 
 int main(){
