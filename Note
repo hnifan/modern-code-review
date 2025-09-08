@@ -17,3 +17,6 @@ A : Because i is the row coordinate entered by the user, not the number of moves
     We should use the counter n to check if all 9 moves are made, for example:
     if (n == 8 && !isWin(game)) 
         cout << "Tie!" << endl;
+
+Q : Why there is not the duplicate step check?
+A : This is the mission of the syntax、logics and I/O
