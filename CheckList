@@ -1,0 +1,10 @@
+Checklist
+Main Route
+1 the signal of Player1 and Player2 can be shown correctly
+2 the position must can be inputed by players in correct order
+3 when a player has met the need to win, print ‘Win!’ and the board
+4 when all the position are filled without 3 lined signals, print ‘Tie!’ and the board
+
+Possible Route
+1 the signal should not can be put into one position twice
+2 the signal chosen by each player in the board should be printed correctly
