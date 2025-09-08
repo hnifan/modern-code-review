@@ -43,7 +43,9 @@ void printBoard(const char board[3][3]) {
 
 int main(){
 	int i, j;
-	char game[3][3] = {' '}; // Tic-tac-toe
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
+			game[i][j] = ' ';; // Tic-tac-toe
 	char player1 = 'X';
 	char player2 = 'O';
 	bool turn = true; // false for player 1's turn, true for player 2's turn. Player 1 first.
