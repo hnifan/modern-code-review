@@ -1,5 +1,19 @@
-Q & A
-Q : Don't know the role of the Tic-tac-toe
-A : HUANG explain the full progress of the MCR-0
-Q : Where is the leader
-A : In spa
+Q & A and Note
+Q :  Why does char game[3][3] = {' '}; not initialize the whole array with spaces?
+A : Because {' '} only initializes the first element with ' ', and the rest are filled with '\0' (null character), not ' '.
+    The correct way is to use a loop, for example:
+    for (int i = 0; i < 3; i++)
+      for (int j = 0; j < 3; j++)
+        game[i][j] = ' ';
+
+Q : Why should we use i-1 and j-1 as array indices instead of i and j?
+A : Because user input is in the range 1..3, while C++ arrays use indices 0..2.
+    If you directly use i and j, it may cause an out-of-bounds error.
+    It should be changed to:
+    game[i-1][j-1] = 'X';  // or 'O'
+
+Q : Why does if (i == 3) fail to correctly check for a tie?
+A : Because i is the row coordinate entered by the user, not the number of moves. Even at the last move, i may not equal 3.
+    We should use the counter n to check if all 9 moves are made, for example:
+    if (n == 8 && !isWin(game)) 
+        cout << "Tie!" << endl;
